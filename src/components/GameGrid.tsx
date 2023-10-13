@@ -13,7 +13,7 @@ const GameGrid = () => {
                 md: 2,
                 lg: 3,
                 xl: 4,
-            }} spacing='10' padding='10px'>
+            }} spacing='10px' padding='10px'>
                 {games?.map(item =>
                     <GameCard game={item} key={item.id}></GameCard>
                 )}

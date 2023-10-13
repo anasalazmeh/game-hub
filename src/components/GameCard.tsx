@@ -1,7 +1,8 @@
 import React from 'react'
 import { Game } from '../hooks/UseGame'
-import { Card, CardBody, CardHeader, Heading, Image, Text } from '@chakra-ui/react'
+import { Card, CardBody, CardHeader, HStack, Heading, Image, Text } from '@chakra-ui/react'
 import Platformsicon from './Platformsicon'
+import CirticScora from './CirticScora'
 interface Pops {
     game: Game
 }
@@ -10,8 +11,11 @@ const GameCard = ({ game }: Pops) => {
         <Card>
             <Image src={game.background_image} ></Image>
             <CardBody>
-                <Heading>{game.name}</Heading>
-                <Platformsicon platform={game.parent_platforms.map((p) => p.platform)}></Platformsicon>
+                <Heading fontSize='xl'>{game.name}</Heading>
+                <HStack justifyContent={'space-between'}>
+                    <Platformsicon platform={game.parent_platforms.map((p) => p.platform)}></Platformsicon>
+                    <CirticScora scora={game.metacritic}></CirticScora>
+                </HStack>
             </CardBody>
         </Card >
     )
