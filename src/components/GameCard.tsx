@@ -3,13 +3,14 @@ import { Game } from '../hooks/UseGame'
 import { Card, CardBody, CardHeader, HStack, Heading, Image, Text } from '@chakra-ui/react'
 import Platformsicon from './Platformsicon'
 import CirticScora from './CirticScora'
+import IamgeSize from '../services/image-url'
 interface Pops {
     game: Game
 }
 const GameCard = ({ game }: Pops) => {
     return (
-        <Card>
-            <Image src={game.background_image} ></Image>
+        <Card overflow='hidden'>
+            <Image src={IamgeSize(game.background_image)} ></Image>
             <CardBody>
                 <Heading fontSize='xl'>{game.name}</Heading>
                 <HStack justifyContent={'space-between'}>
