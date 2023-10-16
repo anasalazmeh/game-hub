@@ -9,10 +9,10 @@ interface Pops {
 }
 const GameCard = ({ game }: Pops) => {
     return (
-        <Card overflow='hidden'>
+        <Card >
             <Image src={IamgeSize(game.background_image)} ></Image>
             <CardBody>
-                <Heading fontSize='xl'>{game.name}</Heading>
+                <Heading fontSize='2xl'>{game.name}</Heading>
                 <HStack justifyContent={'space-between'}>
                     <Platformsicon platform={game.parent_platforms.map((p) => p.platform)}></Platformsicon>
                     <CirticScora scora={game.metacritic}></CirticScora>
