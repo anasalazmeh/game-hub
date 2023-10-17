@@ -6,7 +6,7 @@ import GameGardContainer from './GameGardContainer';
 
 const GameGrid = () => {
     const {data, error,isloading } = UseGame()
-    const Skeleton=[1,2,3,4,5,6]
+    const Skeleton=[1,2,3,4,5,6,7,8]
 
     return (
         <>
@@ -15,10 +15,11 @@ const GameGrid = () => {
                 sm: 1,
                 md: 2,
                 lg: 3,
-                }} spacing={10} padding='10px'>
-                {isloading && Skeleton.map(i => <GameGardContainer><GameCardSkeleton></GameCardSkeleton></GameGardContainer>)}
+                xl:4,
+                }} spacing={2} padding='10px'>
+                {isloading && Skeleton.map(i => <GameGardContainer key={i}><GameCardSkeleton ></GameCardSkeleton></GameGardContainer>)}
                 {data?.map(item =>
-                    <GameGardContainer><GameCard game={item} key={item.id} ></GameCard></GameGardContainer>
+                    <GameGardContainer key={item.id}><GameCard game={item}  ></GameCard></GameGardContainer>
                 )}
             </SimpleGrid>
         </>
