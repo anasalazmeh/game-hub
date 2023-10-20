@@ -16,6 +16,13 @@ interface fatchGame {
   count: number;
   results: Game[];
 }
-const UseGame = (itemgenres: Genres | null) =>
-  UseData<Game>("/games", { params: { genres: itemgenres?.id } }, [itemgenres]);
+const UseGame = (itemgenres: Genres | null, platform: Platform | null) =>
+  UseData<Game>(
+    "/games",
+    { params: {
+      genres: itemgenres?.id, 
+      platforms: platform?.id }
+    },
+    [itemgenres, platform]
+  );
 export default UseGame;

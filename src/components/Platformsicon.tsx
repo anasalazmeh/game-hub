@@ -8,8 +8,8 @@ import {
     FaLinux,
     FaAndroid
 } from 'react-icons/fa'
-import { MdPhoneIphone } from 'react-icons/md'
-import { SiNintendo } from 'react-icons/si'
+import { MdPhoneIphone,MdWeb } from 'react-icons/md'
+import { SiNintendo  } from 'react-icons/si'
 import { IconType } from 'react-icons/lib/esm/iconBase'
 interface Props {
     platform: Platform[]
@@ -24,6 +24,7 @@ const Platformsicon = ({ platform }: Props) => {
         "linux": FaLinux,
         "nintendo": SiNintendo,
         "ios": MdPhoneIphone,
+        'web': MdWeb,
     }
     return (
         <>
