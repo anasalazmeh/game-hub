@@ -5,7 +5,8 @@ import {
     FaPlaystation,
     FaXbox,
     FaApple,
-    FaLinux
+    FaLinux,
+    FaAndroid
 } from 'react-icons/fa'
 import { MdPhoneIphone } from 'react-icons/md'
 import { SiNintendo } from 'react-icons/si'
@@ -18,6 +19,7 @@ const Platformsicon = ({ platform }: Props) => {
         "pc": FaWindows,
         "playstation": FaPlaystation,
         "xbox": FaXbox,
+        'android':FaAndroid,
         "mac": FaApple,
         "linux": FaLinux,
         "nintendo": SiNintendo,

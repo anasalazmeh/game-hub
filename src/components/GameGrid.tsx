@@ -3,9 +3,12 @@ import UseGame from '../hooks/UseGame';
 import GameCard from './GameCard';
 import GameCardSkeleton from './GameCardSkeleton';
 import GameGardContainer from './GameGardContainer';
-
-const GameGrid = () => {
-    const {data, error,isloading } = UseGame()
+import { Genres } from '../hooks/UseGenres';
+interface Porps{
+    itemGenres: Genres |null
+}
+const GameGrid = ({ itemGenres }: Porps) => {
+    const { data, error, isloading } = UseGame(itemGenres)
     const Skeleton=[1,2,3,4,5,6,7,8]
 
     return (

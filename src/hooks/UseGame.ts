@@ -1,3 +1,4 @@
+import { Genres } from "./UseGenres";
 import UseData from "./uesData";
 export interface Platform {
   id: number;
@@ -15,5 +16,6 @@ interface fatchGame {
   count: number;
   results: Game[];
 }
-const UseGame = () => UseData<Game>('/games')
+const UseGame = (itemgenres: Genres | null) =>
+  UseData<Game>("/games", { params: { genres: itemgenres?.id } }, [itemgenres]);
 export default UseGame;

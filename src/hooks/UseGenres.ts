@@ -1,6 +1,6 @@
 import UseData from "./uesData";
 
-interface Genres {
+export interface Genres {
   id: number;
   name: string;
   image_background:string
