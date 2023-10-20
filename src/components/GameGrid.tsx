@@ -11,10 +11,9 @@ interface Porps{
 const GameGrid = ({ gameQuery }: Porps) => {
     const { data, error, isloading } = UseGame(gameQuery)
     const Skeleton=[1,2,3,4,5,6,7,8]
-
+    if (error) return <Text color="red" fontSize='50px'>{error}</Text>
     return (
         <>
-            {error && <Text color="red" fontSize='50px'>{error}</Text>}
             <SimpleGrid columns={{
                 sm: 1,
                 md: 2,
