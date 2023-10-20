@@ -12,11 +12,11 @@ const GameCard = ({ game }: Pops) => {
         <Card >
             <Image src={IamgeSize(game.background_image)} ></Image>
             <CardBody>
-                <Heading fontSize='2xl'>{game.name}</Heading>
-                <HStack justifyContent={'space-between'}>
+                <HStack justifyContent={'space-between'} marginBottom={2}>
                     <Platformsicon platform={game.parent_platforms.map((p) => p.platform)}></Platformsicon>
                     <CirticScora scora={game.metacritic}></CirticScora>
                 </HStack>
+                <Heading fontSize='2xl'>{game.name}</Heading>
             </CardBody>
         </Card >
     )

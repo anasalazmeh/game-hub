@@ -20,7 +20,7 @@ const GameGrid = ({ gameQuery }: Porps) => {
                 md: 2,
                 lg: 3,
                 xl:4,
-                }} spacing={2} padding='10px'>
+                }} spacing={6} padding='10px'>
                 {isloading && Skeleton.map(i => <GameGardContainer key={i}><GameCardSkeleton ></GameCardSkeleton></GameGardContainer>)}
                 {data?.map(item =>
                     <GameGardContainer key={item.id}><GameCard game={item}  ></GameCard></GameGardContainer>
