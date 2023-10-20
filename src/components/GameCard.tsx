@@ -4,6 +4,7 @@ import { Card, CardBody, CardHeader, HStack, Heading, Image, Text } from '@chakr
 import Platformsicon from './Platformsicon'
 import CirticScora from './CirticScora'
 import IamgeSize from '../services/image-url'
+import Emojis from './Emojis'
 interface Pops {
     game: Game
 }
@@ -17,6 +18,7 @@ const GameCard = ({ game }: Pops) => {
                     <CirticScora scora={game.metacritic}></CirticScora>
                 </HStack>
                 <Heading fontSize='2xl'>{game.name}</Heading>
+                <Emojis rating={game.rating_top}></Emojis>
             </CardBody>
         </Card >
     )
