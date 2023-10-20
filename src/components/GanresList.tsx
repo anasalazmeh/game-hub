@@ -18,7 +18,7 @@ const GanresList = ({ selectgenres }:Porps) => {
     
           <List >
               {data?.map(genres => <ListItem paddingY={2} key={genres.id} >
-                  <HStack transition='all 0.3s' onClick={() => { selectgenres(genres); setative(genres.id) }} background={ative == genres.id ? '#4A5568;':''} width='100%' cursor='pointer' paddingX={3} _hover={{ background:"#4A5568;"} } borderRadius={2} paddingY={2}>
+                  <HStack transition='all 0.3s' onClick={() => { selectgenres(genres); setative(genres.id) }} background={ative == genres.id ? 'gray.700' :''} width='100%' cursor='pointer' paddingX={3} _hover={{ background:'gray.700'} } borderRadius={2} paddingY={2}>
                           <Image objectFit='cover' boxSize='32px' borderRadius={5} src={IamgeSize(genres.image_background)} />
                       <Text variant='link' fontWeight={ative == genres.id?'bold':'normal'} fontSize='lg' marginLeft={1}>{genres.name}</Text>
                       </HStack>
