@@ -23,7 +23,7 @@ const UseGame = (gameQuery:GameQuery) =>
     {
       params: {
         ...gameQuery
-
+  
       },
     },
     [gameQuery]
