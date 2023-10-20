@@ -6,7 +6,8 @@ import {
     FaXbox,
     FaApple,
     FaLinux,
-    FaAndroid
+    FaAndroid,
+    FaNeos,
 } from 'react-icons/fa'
 import { MdPhoneIphone,MdWeb } from 'react-icons/md'
 import { SiNintendo  } from 'react-icons/si'
@@ -25,6 +26,7 @@ const Platformsicon = ({ platform }: Props) => {
         "nintendo": SiNintendo,
         "ios": MdPhoneIphone,
         'web': MdWeb,
+        'neo geo':FaNeos,
     }
     return (
         <>

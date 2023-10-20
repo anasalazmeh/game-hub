@@ -1,3 +1,4 @@
+import { GameQuery } from "../App";
 import { Genres } from "./UseGenres";
 import UseData from "./uesData";
 export interface Platform {
@@ -16,13 +17,17 @@ interface fatchGame {
   count: number;
   results: Game[];
 }
-const UseGame = (itemgenres: Genres | null, platform: Platform | null) =>
+const UseGame = (gameQuery:GameQuery) =>
   UseData<Game>(
     "/games",
-    { params: {
-      genres: itemgenres?.id, 
-      platforms: platform?.id }
+    {
+      params: {
+        ...gameQuery
+
+      },
     },
-    [itemgenres, platform]
+    [gameQuery]
+
+    
   );
 export default UseGame;

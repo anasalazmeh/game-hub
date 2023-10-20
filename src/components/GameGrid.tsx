@@ -4,12 +4,12 @@ import GameCard from './GameCard';
 import GameCardSkeleton from './GameCardSkeleton';
 import GameGardContainer from './GameGardContainer';
 import { Genres } from '../hooks/UseGenres';
+import { GameQuery } from '../App';
 interface Porps{
-    itemGenres: Genres |null
-    platform: Platform |null
+    gameQuery:GameQuery
 }
-const GameGrid = ({ itemGenres, platform }: Porps) => {
-    const { data, error, isloading } = UseGame(itemGenres, platform)
+const GameGrid = ({ gameQuery }: Porps) => {
+    const { data, error, isloading } = UseGame(gameQuery)
     const Skeleton=[1,2,3,4,5,6,7,8]
 
     return (
