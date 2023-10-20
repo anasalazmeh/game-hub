@@ -23,7 +23,7 @@ function App() {
       </GridItem>
       <Show above='lg'>
         <GridItem area='Aside' paddingX={2} >
-          <GanresList selectgenres={(genres)=>setselectgenres(genres)}></GanresList>
+          <GanresList  selectgenres={(genres)=>setselectgenres(genres)}></GanresList>
         </GridItem>
       </Show>
       <GridItem area='Main' >
