@@ -3,6 +3,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
 import APICLIENT, { FetchRespones } from "../services/API-client";
 import { Platform } from "./usePlatform";
+import ms from "ms";
 
 export interface Game {
   id: number;
@@ -33,15 +34,17 @@ const UseGame = (gameQuery: GameQuery) =>
   //   // },
   //   // staleTime: 1 * 60 * 60 * 1000 * 60,
   // });
-  useInfiniteQuery<FetchRespones<Game>,Error>({
-    queryKey: ["games",gameQuery],
-    queryFn:({pageParam=1})=>Apiclient.GetAll({
-     params:{
-      ...gameQuery,
-      page:pageParam
-     } 
-    }),
-    getNextPageParam:(lastpage,allpage)=>
-    lastpage.next ? allpage.length + 1 :undefined
+  useInfiniteQuery<FetchRespones<Game>, Error>({
+    queryKey: ["games", gameQuery],
+    queryFn: ({ pageParam = 1 }) =>
+      Apiclient.GetAll({
+        params: {
+          ...gameQuery,
+          page: pageParam,
+        },
+      }),
+    staleTime: ms('24h'),
+    getNextPageParam: (lastpage, allpage) =>
+      lastpage.next ? allpage.length + 1 : undefined,
   });
 export default UseGame;

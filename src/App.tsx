@@ -9,14 +9,14 @@ import SortSelector from './components/SortSelector'
 import GameHeading from './components/GameHeading'
 import { Platform } from './hooks/usePlatform'
 export interface GameQuery {
-  genres:number,
-  parent_platforms:number,
-  ordering:string,
-  search:string
+  genres?:number,
+  parent_platforms?:number,
+  ordering?:string,
+  search?:string
 }
 export interface GamesHeading {
-  genres:Genres,
-  platforms:Platform,
+  genres?:Genres,
+  platforms?:Platform,
 }
 function App() {
   const [Gamequery,setGameQuery]=useState<GameQuery>({}as GameQuery)
@@ -51,8 +51,8 @@ function App() {
           <Flex  marginBottom={5}>
             <Box marginRight={5}>
               <PlatformSelector onSelectPlatform={(Platform) =>{
-                 setGameQuery({ ...Gamequery, parent_platforms: Platform.id });
-                setGameHeading({ ...gameheading, platforms: Platform })
+                 setGameQuery({ ...Gamequery, parent_platforms: Platform?.id });
+                setGameHeading({ ...gameheading, platforms: Platform||undefined })
               }} />
             </Box>
             <SortSelector onSortSelector={(sort) => setGameQuery({ ...Gamequery, ordering: sort })} />

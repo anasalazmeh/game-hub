@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import APICLIENT from "../services/API-client";
+import ms from "ms";
 export interface Genres {
   id: number;
   name: string;
@@ -16,7 +17,7 @@ interface fatchGanres {
 const UseGenres = () =>
   useQuery({
     queryKey: ["Genres"],
-    queryFn:()=> Apiclient.GetAll(),
-    staleTime: 24 * 1000 * 60,
+    queryFn: () => Apiclient.GetAll(),
+    staleTime:ms('24h'),
   });
 export default UseGenres;
