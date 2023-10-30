@@ -1,15 +1,15 @@
-import { Button, HStack, Heading, Image, List, ListItem, Text, background, useColorMode } from '@chakra-ui/react'
+import { HStack, Heading, Image, List, ListItem, Text, useColorMode } from '@chakra-ui/react'
+import { useState } from 'react'
 import UseGenres, { Genres } from '../hooks/UseGenres'
 import IamgeSize from '../services/image-url'
 import GenresListSkeleton from './GenresListSkeleton'
-import { useState } from 'react'
 
 interface Porps{
     selectgenres:(genres:Genres)=>void
 }
 const GanresList = ({ selectgenres }:Porps) => {
     const { toggleColorMode, colorMode } = useColorMode();
-    const { data, isloading } = UseGenres()
+    const { data, isLoading } = UseGenres()
     const [ative,setative]=useState(0)
    const Skeleton=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     let colorItem ='gray.100'
@@ -20,7 +20,7 @@ const GanresList = ({ selectgenres }:Porps) => {
   return (
     <>
     <Heading marginLeft={3} fontSize='2xl' marginBottom={2}>Genres</Heading>
-    {isloading && Skeleton.map(i=> <GenresListSkeleton key={i}/>)}
+    {isLoading && Skeleton.map(i=> <GenresListSkeleton key={i}/>)}
     
           <List >
               {data?.map(genres => <ListItem paddingY={2} key={genres.id} >

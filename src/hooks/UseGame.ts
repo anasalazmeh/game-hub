@@ -1,34 +1,33 @@
+import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
-import { Genres } from "./UseGenres";
-import UseData from "./uesData";
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import APICLIENT from "../services/API-client";
+import { Platform } from "./usePlatform";
+
 export interface Game {
   id: number;
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
-  rating_top:number,
+  rating_top: number;
 }
-interface fatchGame {
-  count: number;
-  results: Game[];
-}
-const UseGame = (gameQuery:GameQuery) =>
-  UseData<Game>(
-    "/games",
-    {
-      params: {
-        ...gameQuery
-  
-      },
-    },
-    [gameQuery]
+const Apiclient = new APICLIENT<Game>("/games");
 
-    
-  );
+const UseGame = (gameQuery: GameQuery) =>
+  // UseData<Game>(
+  //   "/games",
+  //   {
+  //     params: {
+  //       ...gameQuery
+
+  //     },
+  //   },
+  //   [gameQuery]);
+  useQuery<Game[], Error>({
+    queryKey:['games',gameQuery],
+    queryFn: () => Apiclient.GetAll({params:{
+      ...gameQuery
+    }}),
+    staleTime: 24 * 1000 * 60,
+  });
 export default UseGame;

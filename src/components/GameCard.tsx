@@ -1,10 +1,9 @@
-import React from 'react'
+import { Card, CardBody, HStack, Heading, Image } from '@chakra-ui/react'
 import { Game } from '../hooks/UseGame'
-import { Card, CardBody, CardHeader, HStack, Heading, Image, Text, useColorMode } from '@chakra-ui/react'
-import Platformsicon from './Platformsicon'
-import CirticScora from './CirticScora'
 import IamgeSize from '../services/image-url'
+import CirticScora from './CirticScora'
 import Emojis from './Emojis'
+import Platformsicon from './Platformsicon'
 interface Pops {
     game: Game
 }
