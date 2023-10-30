@@ -8,6 +8,7 @@ const Apiclient= axios.create({
 })
 export interface FetchRespones<T> {
   count: number;
+  next:string |null
   results: T[];
 }
 class APICLIENT<T> {
@@ -15,12 +16,8 @@ class APICLIENT<T> {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
-  GetAll = (gamequery?: AxiosRequestConfig ) =>
-    Apiclient.get<FetchRespones<T>>(this.endpoint,
-        { 
-            ...gamequery
-        }
-    )
-    .then(res=>res.data.results)
+  GetAll = (config?: AxiosRequestConfig) =>
+    Apiclient.get<FetchRespones<T>>(this.endpoint,config)
+    .then( (res) => res.data);
 }
 export default APICLIENT

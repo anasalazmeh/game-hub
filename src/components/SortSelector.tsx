@@ -8,8 +8,9 @@ const SortSelector = ({ onSortSelector }:Props) => {
     const SortOrder=[
         {value:'',label:'Relevance'},
         {value:'-added',label:'Data added'},
-        {value:'name',label:'Name'},
-        {value:'-metacritic',label:'Release data'},
+        {value:'-name',label:'Name'},
+        {value:'-released',label:'Release data'},
+        {value:'-metacritic',label:'Poularity'},
         {value:'-rating',label:'Average rating'},
     ]
     const [select, setselect] = useState('Relevance')

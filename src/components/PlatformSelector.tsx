@@ -14,7 +14,7 @@ const PlatformSelector = ({ onSelectPlatform }:Props) => {
     <Menu>
           <MenuButton as={Button} rightIcon={<BsChevronDown />}>{select}</MenuButton>
           <MenuList>
-              {data?.map(Platform => <MenuItem onClick={() => { onSelectPlatform(Platform); setselect(Platform.name)} } key={Platform.id}>{Platform.name}</MenuItem>)}
+              {data?.results.map(Platform => <MenuItem onClick={() => { onSelectPlatform(Platform); setselect(Platform.name)} } key={Platform.id}>{Platform.name}</MenuItem>)}
           </MenuList>
     </Menu>
   )

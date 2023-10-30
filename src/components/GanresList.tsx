@@ -23,7 +23,7 @@ const GanresList = ({ selectgenres }:Porps) => {
     {isLoading && Skeleton.map(i=> <GenresListSkeleton key={i}/>)}
     
           <List >
-              {data?.map(genres => <ListItem paddingY={2} key={genres.id} >
+              {data?.results.map(genres => <ListItem paddingY={2} key={genres.id} >
                   <HStack 
                     transition='all 0.3s'
                      onClick={() => { selectgenres(genres); setative(genres.id) }} 
