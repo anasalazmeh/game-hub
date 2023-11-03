@@ -3,11 +3,11 @@ import { useState } from 'react'
 import UseGenres, { Genres } from '../hooks/UseGenres'
 import IamgeSize from '../services/image-url'
 import GenresListSkeleton from './GenresListSkeleton'
+import StoreQuery from '../Zustand/store'
 
-interface Porps{
-    selectgenres:(genres:Genres)=>void
-}
-const GanresList = ({ selectgenres }:Porps) => {
+
+const GanresList = () => {
+    const { gameQuery, add } = StoreQuery()
     const { toggleColorMode, colorMode } = useColorMode();
     const { data, isLoading } = UseGenres()
     const [ative,setative]=useState(0)
@@ -26,7 +26,7 @@ const GanresList = ({ selectgenres }:Porps) => {
               {data?.results.map(genres => <ListItem paddingY={2} key={genres.id} >
                   <HStack 
                     transition='all 0.3s'
-                     onClick={() => { selectgenres(genres); setative(genres.id) }} 
+                      onClick={() => {  setative(genres.id); add({ ...gameQuery, genres: genres.id }) }} 
                       background={ative == genres.id ? colorItem : ''} width='100%' cursor='pointer' paddingX={3}
                     
                       _hover={{ background :colorItem}} borderRadius={2} paddingY={2}>

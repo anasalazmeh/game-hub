@@ -6,11 +6,9 @@ import GameCardSkeleton from './GameCardSkeleton';
 import GameGardContainer from './GameGardContainer';
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-interface Porps {
-    gameQuery: GameQuery
-}
-const GameGrid = ({ gameQuery }: Porps) => {
-    const { data, error, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } = UseGame(gameQuery)
+
+const GameGrid = () => {
+    const { data, error, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } = UseGame()
     const Skeleton = [1, 2, 3, 4, 5, 6, 7, 8]
     const fetchScroll = data?.pages.reduce((totla, page) => totla + page.results.length, 0) || 0
     if (error) return <Text color="red" fontSize='50px'>{error.message}</Text>
