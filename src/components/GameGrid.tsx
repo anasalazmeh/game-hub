@@ -1,5 +1,4 @@
 import { Button, HStack, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
-import { GameQuery } from '../App';
 import UseGame from '../hooks/UseGame';
 import GameCard from './GameCard';
 import GameCardSkeleton from './GameCardSkeleton';

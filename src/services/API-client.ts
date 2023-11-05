@@ -1,5 +1,4 @@
-import axios ,{AxiosRequestConfig, CanceledError} from "axios";
-import { GameQuery } from "../App";
+import axios, { AxiosRequestConfig } from "axios";
 const Apiclient= axios.create({
     baseURL:'https://api.rawg.io/api',
     params:{
