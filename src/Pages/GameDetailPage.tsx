@@ -8,6 +8,7 @@ import ExpandableText from '../components/ExpandableText';
 import CirticScora from '../components/CirticScora';
 import GameAttribute from '../components/GameAttribute';
 import GameTrailer from '../components/GameTrailer';
+import GameScreenhshot from '../components/gameScreenhshot';
 
 const GameDetailPage = () => {
   const {slug}=useParams()
@@ -19,7 +20,8 @@ const GameDetailPage = () => {
       <Heading>{data?.name}</Heading>
       <Text><ExpandableText Text={data?.description_raw}/></Text>
       <GameAttribute data={data!}/>
-      <GameTrailer slug={slug!} />
+      <GameTrailer id={data?.id!} />
+      <GameScreenhshot id={data?.id!}/>
     </>
   )
 }

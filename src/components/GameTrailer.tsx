@@ -1,10 +1,12 @@
 import React from 'react'
 import UseTrailer from '../hooks/UseTrailer'
 interface Props{
-    slug:number| string
+    id:number| string
 }
-const GameTrailer = ({ slug }:Props) => {
-    const { data } = UseTrailer(slug)
+const GameTrailer = ({ id }:Props) => {
+    const { data, isLoading,error } = UseTrailer(id)
+    if(isLoading)return null
+    if(error) throw error
     const first=data?.results[0]
     if(!first)return null
   return (
