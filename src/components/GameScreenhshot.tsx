@@ -10,7 +10,7 @@ const GameScreenhshot = ({ id }:Props) => {
     if (isLoading) return null
     if (error) throw error
   return (
-    <SimpleGrid spacing={5} columns={{sm:1,md:2}}>
+    <SimpleGrid marginTop={5} spacing={5} columns={{sm:1,md:2}}>
           {data?.results.map(item => <Image key={item.id} src={item.image} />)}
     </SimpleGrid>
   )

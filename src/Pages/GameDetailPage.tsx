@@ -2,7 +2,7 @@ import React from 'react'
 import UseGame from '../hooks/UseGame'
 
 import { useParams } from 'react-router-dom';
-import { HStack, Heading, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
+import { GridItem, HStack, Heading, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
 import UseGameDetail from '../hooks/UseGameDetail';
 import ExpandableText from '../components/ExpandableText';
 import CirticScora from '../components/CirticScora';
@@ -17,11 +17,17 @@ const GameDetailPage = () => {
   if(error)throw error
   return (
     <>
+    <SimpleGrid spacing={1} columns={{base:1, md:2}}>
+      <GridItem paddingRight={1}>
       <Heading>{data?.name}</Heading>
-      <Text><ExpandableText Text={data?.description_raw}/></Text>
-      <GameAttribute data={data!}/>
+      <Text ><ExpandableText Text={data?.description_raw}/></Text>
+          <GameAttribute data={data!} />
+      </GridItem>
+      <GridItem>
       <GameTrailer id={data?.id!} />
       <GameScreenhshot id={data?.id!}/>
+      </GridItem>
+      </SimpleGrid>
     </>
   )
 }
