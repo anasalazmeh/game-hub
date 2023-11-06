@@ -5,7 +5,10 @@ interface Props{
 }
 const GameGardContainer = ({ children }: Props) => {
   return (
-      <Box overflow='hidden'  borderRadius={5}>
+    <Box _hover={{
+      transform: 'scale(1.03)',
+      transition: 'transform .15s ease-in'
+    }} overflow='hidden'  borderRadius={5}>
         {children}
         </Box>
   )

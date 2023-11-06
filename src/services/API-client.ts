@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-const Apiclient= axios.create({
+export const Apiclient= axios.create({
     baseURL:'https://api.rawg.io/api',
     params:{
         key:'4cc7705bffd843ffa6d83553be5040e2'
@@ -18,5 +18,7 @@ class APICLIENT<T> {
   GetAll = (config?: AxiosRequestConfig) =>
     Apiclient.get<FetchRespones<T>>(this.endpoint,config)
     .then( (res) => res.data);
+    Get=()=>Apiclient.get<T>(this.endpoint)
+    .then(res=>res.data)
 }
 export default APICLIENT

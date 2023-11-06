@@ -1,7 +1,8 @@
 import { Box, Button, HStack, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import { useState } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
-import UsePlatforms, { Platform } from '../hooks/UsePlatforms'
+import UsePlatforms from '../hooks/UsePlatforms'
+import { Platform } from "../entities/Platform"
 import StoreQuery from '../Zustand/store'
 
 const PlatformSelector = () => {

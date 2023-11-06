@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <>
     <Navbar/>
     <h1>Oopss</h1>
-          <p>{isRouteErrorResponse(error) ? 'this page is not found 404' :'this page is not found 404'}</p>
+    <p>{isRouteErrorResponse(error) ? 'this page is not found 404' :'this page is not found 404'}</p>
     </>
   )
 }

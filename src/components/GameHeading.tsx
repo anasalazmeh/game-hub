@@ -1,11 +1,11 @@
 import { Heading } from '@chakra-ui/react'
 import StoreQuery from '../Zustand/store'
-import UseGenre from '../hooks/UseGenre'
+import Genre from '../hooks/Genre'
 import usePlatform from '../hooks/UsePlatform'
 
 const GameHeading = () => {
     const { gameQuery, add } = StoreQuery()
-    const Headinggenre = UseGenre(gameQuery.genres)?.name
+    const Headinggenre = Genre(gameQuery.genres)?.name
     const Headingplatform = usePlatform(gameQuery.parent_platforms)?.name
     // let All="All"
     // if (Headinggenre || Headingplatform)All=''

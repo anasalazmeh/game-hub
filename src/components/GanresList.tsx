@@ -1,6 +1,7 @@
 import { HStack, Heading, Image, List, ListItem, Text, useColorMode } from '@chakra-ui/react'
 import { useState } from 'react'
-import UseGenres, { Genres } from '../hooks/UseGenres'
+import UseGenres from '../hooks/UseGenres'
+import { Genres } from "../entities/Genres"
 import IamgeSize from '../services/image-url'
 import GenresListSkeleton from './GenresListSkeleton'
 import StoreQuery from '../Zustand/store'
@@ -19,7 +20,7 @@ const GanresList = () => {
 
   return (
     <>
-    <Heading marginLeft={3} fontSize='2xl' marginBottom={2}>Genres</Heading>
+    <Heading  fontSize='2xl' marginBottom={2}>Genres</Heading>
     {isLoading && Skeleton.map(i=> <GenresListSkeleton key={i}/>)}
     
           <List >
@@ -27,7 +28,7 @@ const GanresList = () => {
                   <HStack 
                     transition='all 0.3s'
                       onClick={() => {  setative(genres.id); add({ ...gameQuery, genres: genres.id }) }} 
-                      background={ative == genres.id ? colorItem : ''} width='100%' cursor='pointer' paddingX={3}
+                      background={ative == genres.id ? colorItem : ''} width='100%' cursor='pointer'
                     
                       _hover={{ background :colorItem}} borderRadius={2} paddingY={2}>
                           <Image objectFit='cover' boxSize='32px' borderRadius={5} src={IamgeSize(genres.image_background)} />

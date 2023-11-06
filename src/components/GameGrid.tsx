@@ -13,18 +13,18 @@ const GameGrid = () => {
     if (error) return <Text color="red" fontSize='50px'>{error.message}</Text>
     return (
         <>
-            <InfiniteScroll dataLength={fetchScroll} hasMore={!!hasNextPage} next={() => fetchNextPage()} 
-            loader={
-                <HStack justifyContent='center'>
-                    <Button paddingX={14} margin={2} onClick={() => fetchNextPage()}> <Spinner/></Button>
-                </HStack>
-            }>
+            <InfiniteScroll dataLength={fetchScroll} hasMore={!!hasNextPage} next={() => fetchNextPage()}
+                loader={
+                    <HStack justifyContent='center'>
+                        <Button paddingX={14} margin={2} onClick={() => fetchNextPage()}> <Spinner /></Button>
+                    </HStack>
+                }>
                 <SimpleGrid columns={{
                     sm: 1,
                     md: 2,
                     lg: 3,
                     xl: 3,
-                    
+
                 }} spacing={6} padding='10px'>
                     {isLoading && Skeleton.map(i => <GameGardContainer key={i}><GameCardSkeleton ></GameCardSkeleton></GameGardContainer>)}
                     {/* {data?.map(item =>
@@ -33,7 +33,7 @@ const GameGrid = () => {
                     {data?.pages.map((data, index) =>
                         <React.Fragment key={index}>
                             {data.results.map(item =>
-                                <GameGardContainer key={item.id}><GameCard game={item}  ></GameCard></GameGardContainer>
+                                <GameGardContainer key={item.id}><GameCard  game={item}  ></GameCard></GameGardContainer>
                             )}
                         </React.Fragment>
                     )}

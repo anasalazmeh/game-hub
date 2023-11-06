@@ -1,11 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import APICLIENT from "../services/API-client";
 import ms from "ms";
-export interface Genres {
-  id: number;
-  name: string;
-  image_background:string
-}
+import { Genres } from "../entities/Genres";
 const Apiclient = new APICLIENT<Genres>("/genres");
 
 interface fatchGanres {
