@@ -1,5 +1,4 @@
 import { Badge } from "@chakra-ui/react";
-
 interface Props{
     scora?:number
 }

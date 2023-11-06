@@ -1,4 +1,3 @@
-import React from 'react'
 import UseTrailer from '../hooks/UseTrailer'
 interface Props{
     id:number| string

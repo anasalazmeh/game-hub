@@ -1,10 +1,9 @@
 import { HStack, Heading, Image, List, ListItem, Text, useColorMode } from '@chakra-ui/react'
 import { useState } from 'react'
+import StoreQuery from '../Zustand/store'
 import UseGenres from '../hooks/UseGenres'
-import { Genres } from "../entities/Genres"
 import IamgeSize from '../services/image-url'
 import GenresListSkeleton from './GenresListSkeleton'
-import StoreQuery from '../Zustand/store'
 
 
 const GanresList = () => {

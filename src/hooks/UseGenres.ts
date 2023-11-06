@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import APICLIENT from "../services/API-client";
 import ms from "ms";
-import { Genres } from "../entities/Genres";
+import  Genres  from "../entities/Genres";
 const Apiclient = new APICLIENT<Genres>("/genres");
 
 interface fatchGanres {

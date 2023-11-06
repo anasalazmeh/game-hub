@@ -1,10 +1,10 @@
 import { Card, CardBody, HStack, Heading, Image } from '@chakra-ui/react'
-import { Game } from "../entities/Game"
+import { Link } from 'react-router-dom'
+import  Game from "../entities/Game"
 import IamgeSize from '../services/image-url'
 import CirticScora from './CirticScora'
 import Emojis from './Emojis'
 import Platformsicon from './Platformsicon'
-import { Link } from 'react-router-dom'
 interface Pops {
     game: Game
 }

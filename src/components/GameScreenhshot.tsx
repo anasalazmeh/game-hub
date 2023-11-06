@@ -1,6 +1,5 @@
-import React from 'react'
-import UseScreenhshot from '../hooks/UseScreenhshot'
 import { Image, SimpleGrid } from '@chakra-ui/react'
+import UseScreenhshot from '../hooks/UseScreenhshot'
 interface Props {
     id: number | string
 }

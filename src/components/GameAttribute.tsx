@@ -1,6 +1,5 @@
-import React from 'react'
-import { Game } from '../entities/Game'
-import { Heading, SimpleGrid,Text } from '@chakra-ui/react'
+import { SimpleGrid, Text } from '@chakra-ui/react'
+import Game from '../entities/Game'
 import CirticScora from './CirticScora'
 interface Props{
     data:Game
