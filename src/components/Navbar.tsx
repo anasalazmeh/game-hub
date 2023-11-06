@@ -5,12 +5,13 @@ import ColorModeSwitch from './ColorModeSwitch'
 import SearchInput from './SearchInput'
 import { useContext } from 'react'
 import StoreQuery from '../Zustand/store'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
   return (
     <HStack  padding='10px'>
-      <Image src={logo} boxSize='60px'></Image>
+      <Link to={'/'} ><Image src={logo} boxSize='60px' objectFit='cover' /></Link>
       <SearchInput/>
       <ColorModeSwitch></ColorModeSwitch>
       {/* <ColorModeHTML></ColorModeHTML> */}
