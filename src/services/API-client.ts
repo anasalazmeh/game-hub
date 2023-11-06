@@ -17,7 +17,9 @@ class APICLIENT<T> {
   }
   GetAll = (config?: AxiosRequestConfig) =>
     Apiclient.get<FetchRespones<T>>(this.endpoint,config)
-    .then( (res) => res.data);
+    .then( (res) => {console.log(res.data);
+      return res.data
+    });
     Get=()=>Apiclient.get<T>(this.endpoint)
     .then(res=>res.data)
 }

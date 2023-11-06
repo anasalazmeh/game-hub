@@ -1,9 +1,10 @@
 import { Badge } from "@chakra-ui/react";
 
 interface Props{
-    scora:number
+    scora?:number
 }
 const CirticScora = ({scora}:Props) => {
+  if(!scora)return null
   let color=scora>75?'green':scora>60 ?'yellow':'';
   return (
     <Badge colorScheme={color} paddingX={2} fontSize='14px' borderRadius={5}>{scora}</Badge>
