@@ -28,7 +28,7 @@ const GanresList = () => {
                     transition='all 0.3s'
                       onClick={() => {  setative(genres.id); add({ ...gameQuery, genres: genres.id }) }} 
                       background={ative == genres.id ? colorItem : ''} width='100%' cursor='pointer'
-                    
+                      padding={1}
                       _hover={{ background :colorItem}} borderRadius={2} paddingY={2}>
                           <Image objectFit='cover' boxSize='32px' borderRadius={5} src={IamgeSize(genres.image_background)} />
                       <Text variant='link' fontWeight={ative == genres.id?'bold':'normal'} fontSize='lg' marginLeft={1}>{genres.name}</Text>
