@@ -4,7 +4,7 @@ import Genre from '../hooks/Genre'
 import usePlatform from '../hooks/UsePlatform'
 
 const GameHeading = () => {
-    const { gameQuery, add } = StoreQuery()
+    const { gameQuery} = StoreQuery()
     const Headinggenre = Genre(gameQuery.genres)?.name
     const Headingplatform = usePlatform(gameQuery.parent_platforms)?.name
     // let All="All"
