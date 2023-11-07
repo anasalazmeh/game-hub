@@ -4,8 +4,8 @@ interface Props{
     Text?:string |null ,
     // children:ReactNode,
 }
-const ExpandableText = ({ Text }: Props): JSX.Element => {
-    if (!Text) return <></>
+const ExpandableText = ({ Text }: Props) => {
+    if (!Text) return null
     const linit=300;
     const [check,setcheck]=useState(false)
     if (Text.length < linit) return <>{Text}</>
