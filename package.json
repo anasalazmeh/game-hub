@@ -2,7 +2,7 @@
   "name": "game-hub",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -22,6 +22,7 @@
     "react-icons": "^4.7.1",
     "react-infinite-scroll-component": "6.1",
     "react-router-dom": "^6.18.0",
+    "test": "^3.3.0",
     "zustand": "^4.3.7"
   },
   "devDependencies": {
